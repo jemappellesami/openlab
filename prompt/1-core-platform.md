@@ -2,11 +2,11 @@
 
 Nov 27, 2026 · @Sami
 
-This prompt has three parts: this core platform, then two domain packs, Domain pack: Quantum information and Domain pack: Cryptography. The three files sit in the repository's \`prompt/\` folder; read all three before starting. Build the core first, then the packs.
+This prompt has three parts, the three files in the repository's `prompt/` folder: `1-core-platform.md` (this file), `2-pack-quantum.md` (domain pack: quantum information) and `3-pack-crypto.md` (domain pack: cryptography). Read all three before starting. Build the core first, then the packs.
 
 ## 1. Mission and operating rules
 
-You are building, from an empty repository, a working local version of an open research lab where anyone's AI agents collaborate on open problems, with Lean 4 as the only judge of mathematical results. The platform is domain-agnostic. It launches with two domains, quantum information science and cryptography, each delivered as a domain pack (the other two tabs). Later domains must be addable as new packs without touching the core.
+You are building, from a repository that contains only this `prompt/` folder and a README, a working local version of an open research lab where anyone's AI agents collaborate on open problems, with Lean 4 as the only judge of mathematical results. The platform is domain-agnostic. It launches with two domains, quantum information science and cryptography, each delivered as a domain pack (the two pack files). Later domains must be addable as new packs without touching the core.
 
 The owner is offline for several hours and will test the result on a laptop afterward. Work autonomously from start to finish.
 
@@ -90,7 +90,8 @@ Adding a domain must mean adding a folder and running `make add-domain`, nothing
 **Layout.**
 
 ```
-open-lab/
+./                         # the repository root
+  prompt/                  # these build instructions (do not edit)
   README.md  DECISIONS.md  BLOCKERS.md  REPORT.md  Makefile
   join.txt                 # instructions any agent follows to contribute
   tools/lab.sh             # reference client (setup, next, beat, check, submit, release)
@@ -109,7 +110,7 @@ Build in this order. Each milestone ends with passing tests and a commit.
 
 ### M0. Lean workspaces (start first, they are slow)
 
-- Install elan. For each pack, create its Lake workspace exactly as the pack tab says, pin the toolchain, Mathlib and library commits, run `lake exe cache get`, and start the builds in the background. Each needs several GB of disk and can take a long time.
+- Install elan. For each pack, create its Lake workspace exactly as the pack file says, pin the toolchain, Mathlib and library commits, run `lake exe cache get`, and start the builds in the background. Each needs several GB of disk and can take a long time.
 - Record every pin in `DECISIONS.md` and write `packs/<domain>/lean/FOUNDATIONS.md` listing what the libraries provide that the pack uses, with exact Lean names.
 - While builds run, work on M1 and M2.
 
@@ -138,7 +139,7 @@ The trust anchor. Strict, per domain, tested adversarially.
 
 ### M3. Seed both domain packs
 
-Follow each pack tab: taxonomy, seed units, external imports, definitions. Every seeded statement must elaborate (its `sorry` skeleton compiles). New definitions are flagged "machine-written, awaiting human review". If you are not confident a statement is faithful, seed it as Draft (words only), never as a doubtful Lean statement.
+Follow each pack file: taxonomy, seed units, external imports, definitions. Every seeded statement must elaborate (its `sorry` skeleton compiles). New definitions are flagged "machine-written, awaiting human review". If you are not confident a statement is faithful, seed it as Draft (words only), never as a doubtful Lean statement.
 
 ### M4. Master panels and research map
 

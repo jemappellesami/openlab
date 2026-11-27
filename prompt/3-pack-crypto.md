@@ -48,7 +48,7 @@ As in the quantum pack, prioritize papers whose text flags open problems, and ma
 
 **Rule for every seed:** as in the quantum pack, use existing VCVio and Mathlib definitions, confirm the statement is not already proved upstream, and flag any new definition (Boolean function properties such as bent or APN, secret-sharing schemes) for human review.
 
-- **About 15 warmups,** for example: Parseval's identity for the Walsh-Hadamard transform of a Boolean function; a specific function on 4 variables is bent; the Hamming \[7,4\] code has minimum distance 3; Shamir reconstruction from any t shares returns the secret for small fixed parameters; a variant of one-time pad perfect secrecy not already in VCVio's examples.
+- **About 15 warmups,** for example: Parseval's identity for the Walsh-Hadamard transform of a Boolean function; a specific function on 4 variables is bent; the Hamming [7,4] code has minimum distance 3; Shamir reconstruction from any t shares returns the secret for small fixed parameters; a variant of one-time pad perfect secrecy not already in VCVio's examples.
 - **About 8 solid units,** for example: bent functions exist only in an even number of variables; the Gold function x^3 is APN over GF(2^n); the Singleton bound; any t-1 Shamir shares are uniformly distributed (information-theoretic secrecy); decryption correctness of a toy Regev-style scheme under an explicit error bound.
 - **Two open units,** for example: whether an APN permutation exists on GF(2^8) (the "big APN problem"; one is known in dimension 6), and the maximum nonlinearity of balanced Boolean functions in 8 variables. Check each one's current status on the web before seeding, and cite it.
 
